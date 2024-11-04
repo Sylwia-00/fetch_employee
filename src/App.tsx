@@ -4,15 +4,15 @@ import EmployeeCard from "./EmployeeCard";
 
 const sampleEmployee = {
   name: {
-    first: "Charlie",
+    first: "Jorge",
 
-    last: "Thompson",
+    last: "Nieto",
   },
 
-  email: "charlie.thompson@example.com",
+  email: "jorge.nieto@example.com",
 
   picture: {
-    medium: "https://randomuser.me/api/portraits/med/men/40.jpg",
+    medium: "https://randomuser.me/api/portraits/med/men/84.jpg",
   },
 };
 
@@ -21,10 +21,10 @@ function App() {
 
   const getEmployee = () => {
     // Send the request
-    fetch("https://randomuser.me/api?nat=en")
+    fetch("http://localhost:3310/api/employees")
       .then((response) => response.json())
       .then((data) => {
-        setEmployee(data.results[0]);
+        setEmployee(data[0]);
       });
   };
 
